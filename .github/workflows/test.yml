@@ -20,6 +20,7 @@ jobs:
         run: npm test
 
   deploy:
+    needs: test # this job only starts when the previous one is finished.
     runs-on: macos-latest
 
     steps:
