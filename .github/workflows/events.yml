@@ -1,0 +1,9 @@
+name: Deploy Project
+on: [issues]
+jobs:
+  output-info:
+    runs-on: macos-latest
+
+    steps:
+      - name: Print GitHub context
+        run: echo "${{ toJSON(github.event) }}"
