@@ -2,46 +2,45 @@ name: Deploy Project
 on: [push]
 jobs:
   lint:
-   runs-on: macos-latest
+    runs-on: macos-latest
 
-   steps:
-    - name: Get code
-      uses: actions/checkout@v4
+    steps:
+      - name: Get code
+        uses: actions/checkout@v4
 
-    - name: Install dependencies
-      run: npm ci
+      - name: Install dependencies
+        run: npm ci
 
-    - name: Run lint
-      run: npm run lint
+      - name: Run lint
+        run: npm run lint
 
   test:
     needs: lint
     runs-on: macos-latest
 
     steps:
-     - name: Get code
-       uses: actions/checkout@v4
- 
-     - name: Install dependencies
-       run: npm ci
- 
-     - name: Run Test
-       run: npm run test
+      - name: Get code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Test
+        run: npm test
 
   deploy:
     needs: test
     runs-on: macos-latest
 
     steps:
-        - name: Get code
-          uses: actions/checkout@v4
-  
-        - name: Install dependencies
-          run: npm ci
-  
-        - name: Build project
-          run: npm run build
+      - name: Get code
+        uses: actions/checkout@v4
 
-        - name: Deploy
-          run: echo "deploying..."
+      - name: Install dependencies
+        run: npm ci
 
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy
+        run: echo "deploying..."
