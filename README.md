@@ -1,3 +1,3 @@
 # Demo
 
-This a demo repository for praticing Git & GitHub
+This a demo branch for praticing GitHub Actions
