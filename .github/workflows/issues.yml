@@ -1,5 +1,5 @@
 name: Handle issue
-on: [issues]
+on: issues
 jobs:
   output-info:
     runs-on: macos-latest
