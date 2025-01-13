@@ -1,4 +1,4 @@
-name: Deploy Project
+name: Handle issue
 on: [issues]
 jobs:
   output-info:
