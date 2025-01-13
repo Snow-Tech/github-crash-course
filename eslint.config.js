@@ -1,4 +1,9 @@
 import globals from "globals";
 
 /** @type {import('eslint').Linter.Config[]} */
-export default [{ languageOptions: { globals: globals.node } }];
+export default [
+  {
+    files: ["**/*.js", "**/*.ts"],
+    languageOptions: { globals: globals.node },
+  },
+];
