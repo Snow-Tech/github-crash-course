@@ -2,7 +2,7 @@ name: Website Deployment
 on:
   push:
     branches:
-      - main
+      - feature/github-workflow-execution
 jobs:
   lint:
     runs-on: ubuntu-latest
